@@ -22,6 +22,7 @@ grub2_cb.elf: grub-root memdisk_src
 	grub-mkstandalone --compress=xz \
 					  --format=i386-coreboot \
 					  --output=$@ \
+					  --themes= \
 					  /=./memdisk_src/
 
 .PHONY: clean
