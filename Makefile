@@ -1,17 +1,23 @@
+GRUB_REVISION = 2.02
+
 export GRUB_ROOT := $(shell realpath .)/grub-root
 export PATH      := $(GRUB_ROOT)/bin:$(PATH)
 
 .PHONY: all
 all: grub2_cb.elf
 
-grub/configure:
-	cd $< && ./autogen.sh
+grub:
+	git clone git://git.savannah.gnu.org/grub.git
+	cd $@ && git checkout grub-$(GRUB_REVISION)
+	./apply_patches.sh
+	cd $@ && ./autogen.sh
 
-build: grub grub/configure
+build: grub
 	mkdir -p build || touch $<
 	cd $@ && ../$</configure --prefix=$(GRUB_ROOT) \
 							 --with-platform=coreboot \
 							 --disable-efiemu \
+							 --disable-werror \
 							 || touch $<
 	$(MAKE) -C $@/ || touch $<
 

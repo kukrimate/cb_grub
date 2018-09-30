@@ -1,4 +1,4 @@
-# GRUB2 submodule
+# GRUB2 source tree
 grub/
 # Build directory
 build/

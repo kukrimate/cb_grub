@@ -1,8 +1,8 @@
 diff --git a/configure.ac b/configure.ac
-index 5e63c4af3..29c31e038 100644
+index edd184154..b24f0c250 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -1626,7 +1626,7 @@ fi
+@@ -1622,7 +1622,7 @@ fi
  
  if test x"$starfield_excuse" = x; then
     for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
