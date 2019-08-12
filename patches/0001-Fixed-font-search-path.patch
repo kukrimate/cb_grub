@@ -1,8 +1,17 @@
+From f6f7e79446aa4c8dc1be2632334693f11934c4e7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?M=C3=A1t=C3=A9=20Kukri?= <kukri.mate@gmail.com>
+Date: Mon, 12 Aug 2019 21:44:54 +0200
+Subject: [PATCH] Fixed font search path.
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/configure.ac b/configure.ac
-index edd184154..b24f0c250 100644
+index 7656f2434..9a4972d17 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -1622,7 +1622,7 @@ fi
+@@ -1649,7 +1649,7 @@ fi
  
  if test x"$starfield_excuse" = x; then
     for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
@@ -11,3 +20,6 @@ index edd184154..b24f0c250 100644
          if test -f "$dir/DejaVuSans.$ext"; then
            DJVU_FONT_SOURCE="$dir/DejaVuSans.$ext"
            break 2
+-- 
+2.22.0
+

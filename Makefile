@@ -1,4 +1,4 @@
-GRUB_REVISION = 2.02
+GRUB_REVISION = 2.04
 
 export GRUB_ROOT := $(shell realpath .)/grub-root
 export PATH      := $(GRUB_ROOT)/bin:$(PATH)
@@ -10,7 +10,7 @@ grub:
 	git clone git://git.savannah.gnu.org/grub.git
 	cd $@ && git checkout grub-$(GRUB_REVISION)
 	./apply_patches.sh
-	cd $@ && ./autogen.sh
+	cd $@ && ./bootstrap
 
 build: grub
 	mkdir -p build || touch $<
