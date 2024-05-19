@@ -1,0 +1,25 @@
+From b077f40caeca0926dee96d7777555a4a272f0ba4 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?M=C3=A1t=C3=A9=20Kukri?= <kukri.mate@gmail.com>
+Date: Mon, 12 Aug 2019 21:44:54 +0200
+Subject: [PATCH 1/8] Fix font search path
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index cd667a2eb..33b57ae1e 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1847,7 +1847,7 @@ if test "x$with_dejavufont" = x; then
+   # search in well-known directories
+   if test x"$starfield_excuse" = x; then
+      for ext in pcf pcf.gz bdf bdf.gz ttf ttf.gz; do
+-       for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/truetype/ttf-dejavu /usr/share/fonts/dejavu /usr/share/fonts/truetype /usr/pkg/share/fonts/X11/TTF /usr/local/share/fonts/dejavu /usr/X11R6/lib/X11/fonts/TTF; do
++       for dir in . /usr/src /usr/share/fonts/X11/misc /usr/share/fonts/truetype/ttf-dejavu /usr/share/fonts/dejavu /usr/share/fonts/truetype /usr/pkg/share/fonts/X11/TTF /usr/local/share/fonts/dejavu /usr/X11R6/lib/X11/fonts/TTF /usr/share/fonts/TTF /usr/share/fonts/truetype/dejavu; do
+           if test -f "$dir/DejaVuSans.$ext"; then
+             DJVU_FONT_SOURCE="$dir/DejaVuSans.$ext"
+             break 2
+-- 
+2.39.2
+
