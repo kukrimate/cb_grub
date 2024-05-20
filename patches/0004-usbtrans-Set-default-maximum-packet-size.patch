@@ -1,7 +1,7 @@
-From 0eee6701ed12eb98f73dda85978a7b17ed5891d2 Mon Sep 17 00:00:00 2001
+From 059db896a3e618819c0c1100005dd1a10d476553 Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:23 +0100
-Subject: [PATCH 4/8] usbtrans: Set default maximum packet size
+Subject: [PATCH 4/9] usbtrans: Set default maximum packet size
 
 Set the maximum packet size to 512 for SuperSpeed devices.
 

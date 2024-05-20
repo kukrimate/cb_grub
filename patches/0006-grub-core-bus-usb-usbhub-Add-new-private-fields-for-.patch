@@ -1,7 +1,7 @@
-From 23156685bc22b1e7536fa55edb576c8cb5099464 Mon Sep 17 00:00:00 2001
+From ae532279c80379342484147d99b46627b776bdc3 Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:25 +0100
-Subject: [PATCH 6/8] grub-core/bus/usb/usbhub: Add new private fields for xHCI
+Subject: [PATCH 6/9] grub-core/bus/usb/usbhub: Add new private fields for xHCI
  controller
 
 Store the root port number, the route, consisting out of the port ID

@@ -1,7 +1,7 @@
-From 559aed519c2328961731e2291b13b854b1f882b8 Mon Sep 17 00:00:00 2001
+From 9e191033fc90671900bebfa97c2a89bca8f658ff Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:26 +0100
-Subject: [PATCH 7/8] grub-core/bus/usb: Add xhci support
+Subject: [PATCH 7/9] grub-core/bus/usb: Add xhci support
 
 Add support for xHCI USB controllers.
 The code is based on seabios implementation, but has been heavily

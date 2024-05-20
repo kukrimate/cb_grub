@@ -1,7 +1,7 @@
-From b077f40caeca0926dee96d7777555a4a272f0ba4 Mon Sep 17 00:00:00 2001
+From 68641967406b2d2c638403824225150ecce30c3b Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?M=C3=A1t=C3=A9=20Kukri?= <kukri.mate@gmail.com>
 Date: Mon, 12 Aug 2019 21:44:54 +0200
-Subject: [PATCH 1/8] Fix font search path
+Subject: [PATCH 1/9] Fix font search path
 
 ---
  configure.ac | 2 +-

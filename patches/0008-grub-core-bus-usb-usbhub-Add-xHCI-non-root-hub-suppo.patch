@@ -1,7 +1,7 @@
-From 6581a3dbfddd816ffe4464c51654ddce4e0b3303 Mon Sep 17 00:00:00 2001
+From a78457565f0633f6db7184f1b5c75cf06171983c Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:27 +0100
-Subject: [PATCH 8/8] grub-core/bus/usb/usbhub: Add xHCI non root hub support
+Subject: [PATCH 8/9] grub-core/bus/usb/usbhub: Add xHCI non root hub support
 
 Tested on Intel PCH C246, the USB3 hub can be configured by grub.
 

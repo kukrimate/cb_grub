@@ -1,7 +1,7 @@
-From 0b961b201aa4f39856cb0b74b91f7a42930b67ae Mon Sep 17 00:00:00 2001
+From c5c07f771e1e7d1f944c281f03ef37c7c4b86e78 Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:22 +0100
-Subject: [PATCH 3/8] usb: Add enum for xHCI
+Subject: [PATCH 3/9] usb: Add enum for xHCI
 
 Will be used in future patches.
 
