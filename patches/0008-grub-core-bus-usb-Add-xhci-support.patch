@@ -1,7 +1,7 @@
-From 9e191033fc90671900bebfa97c2a89bca8f658ff Mon Sep 17 00:00:00 2001
+From 52a9eebf4571fa5557d142096ad73350e0b24cd2 Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:26 +0100
-Subject: [PATCH 7/9] grub-core/bus/usb: Add xhci support
+Subject: [PATCH 8/9] grub-core/bus/usb: Add xhci support
 
 Add support for xHCI USB controllers.
 The code is based on seabios implementation, but has been heavily
@@ -54,20 +54,20 @@ Signed-off-by: sylv <sylv@sylv.io>
  create mode 100644 grub-core/bus/usb/xhci.c
 
 diff --git a/Makefile.am b/Makefile.am
-index 43635d5ff..65016f856 100644
+index 2c86dbbf6..65016f856 100644
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -434,7 +434,7 @@ if COND_i386_coreboot
  FS_PAYLOAD_MODULES ?= $(shell cat grub-core/fs.lst)
  default_payload.elf: grub-mkstandalone grub-mkimage FORCE
  	test -f $@ && rm $@ || true
--	pkgdatadir=. ./grub-mkstandalone --grub-mkimage=./grub-mkimage -O i386-coreboot -o $@ --modules='ahci pata ehci uhci ohci usb_keyboard usbms part_msdos ext2 fat at_keyboard part_gpt usbserial_usbdebug cbfs' --install-modules='ls linux search configfile normal cbtime cbls memrw iorw minicmd lsmmap lspci halt reboot hexdump pcidump regexp setpci lsacpi chain test serial multiboot cbmemc linux16 gzio echo help syslinuxcfg xnu $(FS_PAYLOAD_MODULES) password_pbkdf2 $(EXTRA_PAYLOAD_MODULES)' --fonts= --themes= --locales= -d grub-core/ /boot/grub/grub.cfg=$(srcdir)/coreboot.cfg
+-	pkgdatadir=. ./grub-mkstandalone --grub-mkimage=./grub-mkimage -O i386-coreboot -o $@ --modules='ahci pata nvme ehci uhci ohci usb_keyboard usbms part_msdos ext2 fat at_keyboard part_gpt usbserial_usbdebug cbfs' --install-modules='ls linux search configfile normal cbtime cbls memrw iorw minicmd lsmmap lspci halt reboot hexdump pcidump regexp setpci lsacpi chain test serial multiboot cbmemc linux16 gzio echo help syslinuxcfg xnu $(FS_PAYLOAD_MODULES) password_pbkdf2 $(EXTRA_PAYLOAD_MODULES)' --fonts= --themes= --locales= -d grub-core/ /boot/grub/grub.cfg=$(srcdir)/coreboot.cfg
 +	pkgdatadir=. ./grub-mkstandalone --grub-mkimage=./grub-mkimage -O i386-coreboot -o $@ --modules='ahci pata xhci ehci uhci ohci usb_keyboard usbms part_msdos ext2 fat at_keyboard part_gpt usbserial_usbdebug cbfs' --install-modules='ls linux search configfile normal cbtime cbls memrw iorw minicmd lsmmap lspci halt reboot hexdump pcidump regexp setpci lsacpi chain test serial multiboot cbmemc linux16 gzio echo help syslinuxcfg xnu $(FS_PAYLOAD_MODULES) password_pbkdf2 $(EXTRA_PAYLOAD_MODULES)' --fonts= --themes= --locales= -d grub-core/ /boot/grub/grub.cfg=$(srcdir)/coreboot.cfg
  endif
  
  endif
 diff --git a/grub-core/Makefile.core.def b/grub-core/Makefile.core.def
-index 1571421d7..ea782666d 100644
+index 64d974aa5..0f893369a 100644
 --- a/grub-core/Makefile.core.def
 +++ b/grub-core/Makefile.core.def
 @@ -667,6 +667,13 @@ module = {

@@ -1,7 +1,7 @@
-From e1c55dc5759bf1e016bec90747ec9728ec2457df Mon Sep 17 00:00:00 2001
+From 0733794ceb4a18b44139a182221fcc9255e32544 Mon Sep 17 00:00:00 2001
 From: Patrick Rudolph <patrick.rudolph@9elements.com>
 Date: Mon, 7 Dec 2020 08:41:21 +0100
-Subject: [PATCH 2/9] grub-core/bus/usb: Parse SuperSpeed companion descriptors
+Subject: [PATCH 3/9] grub-core/bus/usb: Parse SuperSpeed companion descriptors
 
 Parse the SS_ENDPOINT_COMPANION descriptor, which is only present on USB 3.0
 capable devices and xHCI controllers. Make the descendp an array of pointers
